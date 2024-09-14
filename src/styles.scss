@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    // font-size: inherit;
+    box-sizing: border-box;
+    /* FONT FAMILY */
+    --primary-font-family: 'Montserrat';
+    --secondary-font-family: "Poppins", sans-serif;
+    /* COLOR */
+    --primary-color: #111;
+    --secondary-color: #FFFFFF1A;
+    --primary-text-color: rgba(255, 255, 255, 0.60);
+    --secondary-text-color: rgba(255, 255, 255, 0.80);
+    --light-darkCard-bg-color: rgba(255, 255, 255, 0.10);
+    --hover-color: #e7e8ff;
+    --Warning-msg-color: #d1373f;
+    --warning-Highlight-color: #fbc444;
+    --border-primary-color: #d5d7da;
+    /* FONT SIZE */
+    --fs-extra: 80px;
+    --fs-high: 28px;
+    --fs-medium: 22px;
+    --fs-low: 12px;
+    --fs-too-low: 10px;
+    /* FONT Weight */
+    --fw-high: 700;
+    --fw-medium: 500;
+    --fw-regular: 400;
+    --fw-low: 350;
+    /* LINE HEIGHT */
+    --lh-high: 20px;
+    --lh-regular: 18px;
+    --lh-medium: 16px;
+    --lh-normal: 14px;
+    --lh-low: 12px;
+}
+
+
+body {
+    text-rendering: optimizeSpeed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

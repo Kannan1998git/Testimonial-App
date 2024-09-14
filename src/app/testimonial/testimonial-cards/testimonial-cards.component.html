@@ -1,0 +1,22 @@
+<section id="testimonial-bg-clr">
+    <div class="testimonial-header">
+        <h1 class="primary-header">
+            What User says
+        </h1>
+        <p class="description">
+            Testimonials that speak louder than words! Customer stories that light up our day.
+        </p>
+    </div>
+    <div class="carousel-wrapper">
+        <div class="carousel-container" #carouselContainer>
+            <div class="carousel-track" #carouselTrack>
+                <div class="card" *ngFor="let slide of slideStore; let i=index" [ngClass]="getAnimationClass(i)">
+                    <img [src]="slide.image" [alt]="slide.name">
+                    <span class="card-head">{{slide.name}}</span>
+                    <p class="card-description">{{slide.description}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

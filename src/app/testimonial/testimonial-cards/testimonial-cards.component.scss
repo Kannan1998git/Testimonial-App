@@ -1,0 +1,161 @@
+#testimonial-bg-clr {
+    background-color: var(--primary-color);
+}
+
+.testimonial-header {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: var(--light-darkCard-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 460px;
+    height: 350px;
+    padding: 40px 30px 50px 30px;
+    animation: none;
+}
+
+.primary-header {
+    color: #FFF;
+    text-align: center;
+    font-family: var(--primary-font-family);
+    font-size: var(--fs-extra);
+    font-weight: var(--fw-high);
+    line-height: normal;
+}
+
+.description {
+    color: #FFF;
+    text-align: center;
+    font-family: var(--primary-font-family);
+    font-size: var(--fs-high);
+    font-weight: var(--fw-regular);
+    line-height: normal;
+    max-width: 1050px;
+}
+
+.card-head {
+    font-family: var(--secondary-font-family);
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-medium);
+    color: var(--primary-text-color);
+    padding-bottom: 30px;
+}
+
+.card-description {
+    color: var(--secondary-text-color);
+    text-align: center;
+    font-family: var(--secondary-font-family);
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-regular);
+    line-height: normal;
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+
+.carousel-wrapper {
+    padding-top: 129px;
+    width: 100%;
+    overflow: hidden;
+    height: 700px;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: horizontalScroll 30s linear infinite;
+    gap: 30px;
+}
+
+.card.group-1 {
+    animation: moveUpDown 2s ease-in-out infinite alternate;
+}
+
+.card.group-2 {
+    animation: moveUpDown 2s ease-in-out infinite alternate 1s;
+}
+
+.card.group-3 {
+    animation: moveUpDownReverse 2s ease-in-out infinite alternate;
+}
+
+.card.group-4 {
+    animation: moveUpDownReverse 2s ease-in-out infinite alternate 1s;
+}
+
+@keyframes horizontalScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes moveUpDownReverse {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(200px);
+    }
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: .5;
+    filter: blur(15px);
+
+}
+
+.carousel-wrapper::before {
+    left: 0;
+    background: var(--primary-color);
+}
+
+.carousel-wrapper::after {
+    right: 0;
+    background: var(--primary-color);
+}
