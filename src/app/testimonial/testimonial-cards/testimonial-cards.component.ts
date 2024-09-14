@@ -7,8 +7,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./testimonial-cards.component.scss']
 })
 export class TestimonialCardsComponent implements OnInit {
-  @ViewChild('carouselTrack')
+  @ViewChild('carouselTrack', { static: false })
   carouselTrack!: ElementRef;
+
   @ViewChild('carouselContainer')
   carouselContainer!: ElementRef;
   currentPosition = 0;
@@ -73,8 +74,12 @@ export class TestimonialCardsComponent implements OnInit {
     this.initiateScroll();
   }
   initiateScroll() {
-    const carouselTrack = this.carouselTrack.nativeElement;
-    carouselTrack.style.transform = 'translateX(0)';
+
+    const carouselTrack = this.carouselTrack?.nativeElement;
+    if (carouselTrack) {
+      carouselTrack.style.transform = 'translateX(0)';
+
+    }
     setTimeout(() => {
       this.startScrollAnimation(carouselTrack);
     }, 100);
@@ -82,16 +87,19 @@ export class TestimonialCardsComponent implements OnInit {
 
   startScrollAnimation(carouselTrack: HTMLElement) {
     const scrollDuration = 30;
-    carouselTrack.style.transition = `transform ${scrollDuration}s linear`;
-    carouselTrack.style.transform = `translateX(-100%)`;
-    carouselTrack.addEventListener('transitionend', () => {
-      carouselTrack.style.transition = 'none';
-      carouselTrack.style.transform = 'translateX(0)';
-      setTimeout(() => {
-        carouselTrack.style.transition = `transform ${scrollDuration}s linear`;
-        carouselTrack.style.transform = `translateX(-100%)`;
-      }, 40);
-    });
+    if (carouselTrack) {
+      carouselTrack.style.transition = `transform ${scrollDuration}s linear`;
+      carouselTrack.style.transform = `translateX(-100%)`;
+      carouselTrack.addEventListener('transitionend', () => {
+        carouselTrack.style.transition = 'none';
+        carouselTrack.style.transform = 'translateX(0)';
+        setTimeout(() => {
+          carouselTrack.style.transition = `transform ${scrollDuration}s linear`;
+          carouselTrack.style.transform = `translateX(-100%)`;
+        }, 40);
+      });
+    }
+
   }
 
   getAnimationClass(index: number) {
